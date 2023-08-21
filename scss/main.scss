@@ -1,0 +1,539 @@
+//  import bootstrap-5 form node_modules
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+$font-family-sans-serif: "Poppins" sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+$font-family-sans-serif: "Cormorant Garamond", serif;
+
+// Breadcrumb import & Shop import
+@import "breadcrumb";
+@import "shop";
+@import "product-deteils";
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F6F6F6;
+}
+
+//  All custom code
+// Top Navbar Start
+
+.nav-line {
+  list-style-type: none;
+  width: 1.3px;
+  background-color: rgb(170, 169, 169);
+  height: 15px;
+  margin-top: 15px;
+}
+
+.custom-navbar {
+  position: relative;
+}
+
+.custom-navbar:hover ul {
+  display: block;
+}
+
+.custom-second {
+  display: none;
+  position: absolute;
+  min-width: 100px;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 1px 7px -2px rgb(0 0 0 / 30%);
+  margin-top: 8px;
+  padding: 10px;
+  color: #313131;
+  
+}
+
+.custom-second li:hover {
+  background-color: #e5e5e5;
+}
+
+.nav-icon {
+  font-size: 20px;
+  padding: 0 4px;
+
+  a {
+    color: rgb(142, 140, 140);
+  }
+}
+
+.main a {
+  color: #313131;
+}
+
+
+
+// carousel start
+
+.img-carousel {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+
+.carousel-control-prev {
+  left: -4rem;
+}
+
+.carousel-control-next {
+  right: -4rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%);
+}
+
+.caption-carousel {
+  margin-left: 30%;
+}
+
+// Features card section start
+
+.single-burner {
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    transition: all 0.5s ease;
+    transform: scale(1);
+  }
+
+  &:hover a img {
+    transform: scale(1.2);
+  }
+
+  .burner-content {
+    position: absolute;
+    content: "";
+    top: 40px;
+    left: 35px;
+
+    h3 {
+      color: #617d05;
+      margin-bottom: 10px;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    h4 {
+      font-size: 22px;
+      font-family: "Cormorant Garamond", serif;
+      margin-bottom: 10px;
+    }
+
+    span {
+      margin-left: 2px;
+      font-size: 20px;
+      color: #617d05;
+    }
+
+    a {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      border: 2px solid #617d05;
+      text-align: center;
+      color: #617d05;
+    }
+  }
+}
+
+// Items section start
+.items-section {
+  .item-heading {
+    h2 {
+      margin-top: 60px;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 36px;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 20px;
+      width: 70px;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &::before {
+      left: -100px;
+    }
+
+    &::after {
+      right: -100px;
+    }
+  }
+
+  .navitems {
+    a {
+      font-size: 20px;
+      font-weight: 400;
+      color: #4c4a4a;
+    }
+
+    &:hover a {
+      color: #000000;
+    }
+  }
+}
+
+// Product Card Section start
+.product-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+
+  a {
+    line-height: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .product-img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    .hover-img {
+      position: absolute;
+      top: 0;
+      left: -50%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.7s;
+      transform: translate(50%, 20px);
+    }
+  }
+
+  &:hover .hover-img {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(50%, -20px);
+  }
+
+  .product-bades {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      background-color: #fa6bff;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 10px;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .new {
+      background-color: #a749ff;
+    }
+  }
+
+  .product-card {
+    position: absolute;
+    bottom: 115px;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+    transform: translateY(20px);
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: #a749ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      border-right: 1px solid #fff;
+      transition: all 0.5s;
+    }
+
+    button:hover {
+      background-color: #000;
+    }
+
+    .wishlist {
+      display: block;
+      width: 20%;
+    }
+
+    .add-to-card {
+      width: calc(100% - 40%);
+      transition-delay: 0.1s;
+    }
+
+    .quick-view {
+      display: block;
+      transition-delay: 0.2s;
+      width: 20%;
+    }
+  }
+
+  &:hover .product-card {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-content {
+    font-size: 16px;
+
+    .product-title {
+      transition: all 0.5s;
+      margin-bottom: 15px;
+    }
+
+    &:hover a {
+      color: #a749ff;
+    }
+
+    .product-reating {
+      margin-bottom: 10px;
+
+      .yellow {
+        color: rgb(248, 203, 120);
+      }
+    }
+
+    .product-pricing {
+      font-size: 15px;
+
+      .old-price {
+        margin-left: 6px;
+        color: #9c9494;
+      }
+    }
+  }
+}
+
+// Product Card Section End
+
+// Shipping card start
+.wrapper {
+  border: 4px solid #f1f1f1;
+
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes icon-animated {
+    0% {
+      transform: scaleX(1);
+    }
+
+    10%,
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg);
+    }
+
+    30%,
+    40%,
+    50% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+    }
+
+    60%,
+    70%,
+    80% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+    }
+
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  &:hover .animated {
+    animation: icon-animated 0.5s ease-in-out 0s 1 normal none running;
+  }
+
+  img {
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    font-weight: normal;
+    color: #424242;
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #4c4a4a;
+    margin-bottom: 30px;
+  }
+}
+
+// Shipping card End
+
+// subscribe section start
+
+.subscribe-wrapper {
+  margin-top: 40px;
+
+  h3 {
+    font-weight: normal;
+    color: #424242;
+    margin-bottom: 20px;
+    font-size: 48px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #4c4a4a;
+    margin-bottom: 30px;
+  }
+
+  .form-wrapper {
+    position: relative;
+
+    input {
+      border: 2px solid #ddd;
+      outline: none;
+      border-radius: 2px;
+      padding: 6px 0;
+    }
+
+    button {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: none;
+      text-align: center;
+      font-size: 28px;
+      border: none;
+      color: #9c9494;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      color: #000;
+    }
+  }
+}
+
+// subscribe section End
+
+// Footer Section Start
+.footer-container {
+  background-color: #f1f1f1;
+  position: relative;
+
+  .footer-wrapper {
+    margin: 90px 0;
+
+    .footer-logo {
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 14px;
+      color: #625e5e;
+      margin: 2px 0;
+      line-height: 24px;
+      letter-spacing: 0.9px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #313131;
+      margin-bottom: 20px;
+    }
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: #625e5e;
+        text-align: center;
+        transition: all 0.5s;
+        font-size: 15px;
+        line-height: 30px;
+      }
+
+      &:hover a {
+        color: #a749ff;
+      }
+    }
+
+    .footer-form {
+      p {
+        margin-bottom: 25px;
+      }
+
+      input {
+        border: 2px solid #ddd;
+        outline: none;
+        padding: 6px 0;
+        margin-bottom: 20px;
+      }
+
+      button {
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #a4a2a2;
+        color: #625e5e;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.4s;
+
+        &:hover {
+          color: #a749ff;
+        }
+      }
+    }
+  }
+
+  .button-fixed {
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #a749ff;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+  }
+}
